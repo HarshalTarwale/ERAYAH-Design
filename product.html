@@ -7,7 +7,7 @@
 <meta name="description" content="Hand-set jadau chandbalis in 22kt gold-plated silver alloy with glass polki. 13.6g per earring, 52mm drop. ₹5,900.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="favicon.svg">
 <link rel="mask-icon" href="favicon.svg" color="#32172A">
@@ -15,6 +15,7 @@
 <style>/* ============ ERAYAH — design tokens ============ */
 :root{
   --plum:#32172A;          /* exact brand aubergine, sampled from logo */
+  --plum-950:#150710;
   --plum-900:#220F1C;
   --plum-700:#43213A;
   --plum-500:#5C3550;
@@ -68,15 +69,9 @@ p{margin:0 0 1em}
 .mark{width:1em;height:1.372em;display:inline-block;color:currentColor;vertical-align:-.22em}
 .mark svg{width:100%;height:100%;display:block;fill:currentColor}
 .wordmark{
-  font-family:"Cinzel",var(--display);font-weight:500;letter-spacing:.2em;
-  text-indent:.2em;line-height:1;white-space:nowrap;
+  font-family:"Marcellus",var(--display);font-weight:400;letter-spacing:.16em;
+  text-indent:.16em;line-height:1;white-space:nowrap;
 }
-/* header brand lockup — elephant mark + wordmark */
-.brand{display:inline-flex;align-items:center;gap:13px;color:inherit}
-.brand .brand-mark{font-size:30px;flex:none;transition:font-size .35s ease}
-.brand .wordmark{font-weight:500}
-.hdr.small .brand .brand-mark{font-size:24px}
-@media(max-width:520px){.brand{gap:9px}.brand .brand-mark{font-size:25px}}
 
 /* elephant used as a quiet section divider */
 .glyph{display:flex;align-items:center;justify-content:center;gap:16px;color:var(--gold);margin-bottom:22px}
@@ -115,7 +110,7 @@ p{margin:0 0 1em}
 .link-u:hover{opacity:.6}
 
 /* ============ header ============ */
-.notice{background:var(--plum-900);color:var(--ivory);text-align:center;padding:9px 16px;position:relative;height:34px}
+.notice{background:var(--plum-950);color:rgba(248,234,207,.9);text-align:center;padding:9px 16px;position:relative;height:32px}
 .notice span{
   position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   font-size:10px;letter-spacing:.22em;text-transform:uppercase;
@@ -128,12 +123,12 @@ p{margin:0 0 1em}
 .hdr-in{
   max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);
   display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
-  height:78px;transition:height .35s ease;
+  height:68px;transition:height .35s ease;
 }
-.hdr.small .hdr-in{height:62px}
+.hdr.small .hdr-in{height:56px}
 .hdr-l,.hdr-r{display:flex;align-items:center;gap:26px}
 .hdr-r{justify-content:flex-end}
-.hdr .wordmark{font-size:26px;transition:font-size .35s ease}
+.hdr .wordmark{font-size:25px;transition:font-size .35s ease}
 .hdr.small .wordmark{font-size:21px}
 .icobtn{display:flex;align-items:center;gap:9px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.85;transition:opacity .3s}
 .icobtn:hover{opacity:1}
@@ -143,31 +138,31 @@ p{margin:0 0 1em}
   font-size:9.5px;display:grid;place-items:center;letter-spacing:0;font-weight:500;
 }
 
-.nav{border-top:1px solid rgba(248,234,207,.14);transition:opacity .3s ease,max-height .35s ease}
+.nav{background:var(--sand);border-top:1px solid rgba(50,23,42,.1);box-shadow:0 12px 28px -20px rgba(50,23,42,.5);transition:opacity .3s ease,max-height .35s ease}
 .hdr.small .nav{opacity:0;max-height:0;overflow:hidden;pointer-events:none}
 .nav-in{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);display:flex;justify-content:center;gap:clamp(20px,3vw,42px)}
 .nav-in>li>a{
-  display:block;padding:15px 2px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--ivory);position:relative;opacity:.9;transition:opacity .3s;
+  display:block;padding:13px 2px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--plum);position:relative;opacity:.74;transition:opacity .3s;
 }
-.nav-in>li>a::after{content:"";position:absolute;left:0;right:100%;bottom:10px;height:1px;background:var(--gold-soft);transition:right .4s cubic-bezier(.2,.7,.3,1)}
+.nav-in>li>a::after{content:"";position:absolute;left:0;right:100%;bottom:9px;height:1px;background:var(--gold);transition:right .4s cubic-bezier(.2,.7,.3,1)}
 .nav-in>li:hover>a{opacity:1}
 .nav-in>li:hover>a::after{right:0}
 
 .mega{
-  position:absolute;left:0;right:0;background:var(--plum-900);color:var(--ivory);
-  border-top:1px solid rgba(248,234,207,.12);
+  position:absolute;left:0;right:0;background:var(--sand);color:var(--plum);
+  border-top:1px solid rgba(50,23,42,.12);box-shadow:0 34px 54px -34px rgba(50,23,42,.45);
   opacity:0;visibility:hidden;transform:translateY(-6px);
   transition:opacity .3s ease,transform .3s ease,visibility .3s;
   z-index:59;
 }
 .has-mega:hover .mega,.mega:hover{opacity:1;visibility:visible;transform:none}
 .mega-in{max-width:var(--maxw);margin:0 auto;padding:44px var(--gut) 50px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) 300px;gap:48px}
-.mega h4{font-size:14px;letter-spacing:.2em;text-transform:uppercase;font-family:var(--ui);font-weight:400;color:var(--gold-soft);margin-bottom:18px}
-.mega li a{display:block;padding:6px 0;font-size:14px;font-weight:300;opacity:.8;transition:opacity .25s,padding-left .25s}
+.mega h4{font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-family:var(--ui);font-weight:500;color:var(--gold);margin-bottom:18px}
+.mega li a{display:block;padding:6px 0;font-size:14px;font-weight:400;color:var(--plum);opacity:.78;transition:opacity .25s,padding-left .25s}
 .mega li a:hover{opacity:1;padding-left:7px}
 .mega-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.mega-card p{margin:14px 0 0;font-size:13px;opacity:.75}
+.mega-card p{margin:14px 0 0;font-size:13px;color:var(--muted)}
 
 .burger{display:none}
 
@@ -310,19 +305,22 @@ p{margin:0 0 1em}
 .insta a:hover img{transform:scale(1.07);opacity:.82}
 
 /* ============ newsletter ============ */
-.news{background:var(--plum-900);color:var(--ivory);padding:clamp(56px,7vw,96px) 0;text-align:center}
-.news form{display:flex;gap:0;max-width:520px;margin:32px auto 0;border-bottom:1px solid rgba(248,234,207,.34)}
+.news{background:var(--sand);color:var(--plum);padding:clamp(56px,7vw,96px) 0;text-align:center;border-top:1px solid var(--line)}
+.news .glyph{color:var(--gold)}
+.news .lede{color:var(--muted)!important}
+.news form{display:flex;gap:0;max-width:520px;margin:32px auto 0;border-bottom:1px solid rgba(50,23,42,.32)}
 .news input{
-  flex:1;background:none;border:0;color:var(--ivory);padding:15px 4px;font-family:var(--ui);font-size:14px;
+  flex:1;background:none;border:0;color:var(--plum);padding:15px 4px;font-family:var(--ui);font-size:14px;
 }
-.news input::placeholder{color:rgba(248,234,207,.45)}
+.news input::placeholder{color:rgba(50,23,42,.45)}
 .news input:focus{outline:none;}
-.news button{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:15px 6px 15px 20px;color:var(--gold-soft)}
-.news small{display:block;margin-top:16px;font-size:11.5px;color:rgba(248,234,207,.5)}
+.news button{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:15px 6px 15px 20px;color:var(--gold)}
+.news small{display:block;margin-top:16px;font-size:11.5px;color:rgba(50,23,42,.55)}
 
 /* ============ footer ============ */
 .ftr{background:var(--plum);color:var(--ivory);padding:clamp(56px,6vw,88px) 0 34px}
 .ftr-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:clamp(28px,4vw,60px);padding-bottom:52px;border-bottom:1px solid rgba(248,234,207,.16)}
+.ftr-brand .ftr-mark{font-size:42px;color:var(--gold-soft);display:block;margin-bottom:14px}
 .ftr .wordmark{font-size:29px;display:block;margin-bottom:18px}
 .ftr-brand p{font-size:13.5px;color:rgba(248,234,207,.66);max-width:34ch;line-height:1.85}
 .ftr h4{font-family:var(--ui);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--gold-soft);margin-bottom:20px}
@@ -361,7 +359,7 @@ p{margin:0 0 1em}
 .cart-empty{text-align:center;padding:60px 0;color:var(--muted)}
 
 /* ============ PLP ============ */
-.plp-hero{background:var(--plum);color:var(--ivory);padding:clamp(46px,5vw,78px) 0 clamp(46px,5vw,74px);text-align:center}
+.plp-hero{background:radial-gradient(120% 140% at 50% -30%,var(--plum-700),var(--plum) 55%,var(--plum-900));color:var(--ivory);padding:clamp(46px,5vw,78px) 0 clamp(46px,5vw,74px);text-align:center;border-bottom:1px solid rgba(169,128,63,.22)}
 .crumbs{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(248,234,207,.55);margin-bottom:22px}
 .crumbs a:hover{color:var(--ivory)}
 .plp-body{display:grid;grid-template-columns:250px 1fr;gap:clamp(28px,4vw,64px);align-items:start;padding-block:clamp(34px,4vw,58px)}
@@ -451,7 +449,8 @@ p{margin:0 0 1em}
 @media(max-width:860px){
   .nav{display:none}
   .burger{display:flex}
-  .hdr-l .icobtn.searchtxt{display:none}
+  .hdr-l,.hdr-r{gap:18px}
+  .hdr-l .icobtn.searchtxt span{display:none}
   .hero-in{grid-template-columns:1fr;padding-top:44px}
   .hero-art{order:-1}
   .hero-art .arch{aspect-ratio:4/4.2}
@@ -475,8 +474,16 @@ p{margin:0 0 1em}
   .galmore{grid-template-columns:1fr}
   .facts{grid-template-columns:1fr}
   .usp{grid-template-columns:1fr}
+  .hdr-in{height:60px}
+  .hdr.small .hdr-in{height:54px}
+  .hdr-l,.hdr-r{gap:14px}
+  .hdr .wordmark{font-size:22px}
   .hdr-r .icobtn span{display:none}
-  .notice span{font-size:9px;letter-spacing:.12em;padding-inline:12px}
+  .hdr-r a.icobtn{display:none}
+  .icobtn svg{width:19px;height:19px}
+  .notice{height:auto;min-height:30px;padding:7px 12px;display:flex;align-items:center;justify-content:center}
+  .notice span{position:static;opacity:.85;font-size:9px;letter-spacing:.1em;padding:0}
+  .notice span:not(.on){display:none}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
@@ -500,10 +507,7 @@ p{margin:0 0 1em}
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg><span>Search</span>
       </button>
     </div>
-    <a class="brand" href="index.html" aria-label="ERAYAH — home">
-      <span class="mark brand-mark" aria-hidden="true"><svg viewBox="0 0 1000 1372"><use href="#ele"></use></svg></span>
-      <span class="wordmark">ERAYAH</span>
-    </a>
+    <a class="wordmark" href="index.html" aria-label="ERAYAH — home">ERAYAH</a>
     <div class="hdr-r">
       <a class="icobtn" href="#"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c1.2-3.8 4-5.6 7.5-5.6S18.3 16.2 19.5 20"/></svg><span>Account</span></a>
       <a class="icobtn" href="#"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.3A4.1 4.1 0 0 1 12 8a4.1 4.1 0 0 1 7 2.7C19 15.6 12 20 12 20z"/></svg><span>Saved</span></a>
@@ -766,7 +770,7 @@ p{margin:0 0 1em}
   <div class="wrap-narrow">
     <div class="glyph" aria-hidden="true"><span class="mark" style="font-size:19px" aria-hidden="true"><svg viewBox="0 0 1000 1372"><path d="M0.6 1371.4C0.3 1370.9 0.5 1324.7 1.0 1268.6C1.8 1182.7 2.2 1166.3 3.5 1163.9C6.7 1157.6 17.2 1149.8 27.7 1145.9C32.0 1144.3 39.7 1144.0 98.3 1143.1C273.5 1140.6 263.8 1140.6 269.9 1142.6C273.0 1143.6 275.9 1144.7 276.3 1145.1C276.8 1145.5 273.3 1148.8 268.7 1152.4C238.0 1176.4 216.2 1207.3 204.2 1243.4C199.3 1258.3 196.4 1275.2 194.3 1302.7C192.5 1325.3 192.4 1327.2 192.3 1350.5L192.2 1372.2 L96.7 1372.2C44.1 1372.2 0.9 1371.8 0.6 1371.4ZM545.6 1332.1C545.2 1310.0 544.4 1287.1 543.9 1281.2C539.4 1234.4 518.2 1191.8 482.3 1157.8L474.6 1150.5 L480.9 1149.9C514.1 1147.0 520.9 1145.9 533.9 1142.0C540.5 1140.0 542.0 1140.0 624.9 1141.1C671.2 1141.6 715.0 1142.1 722.1 1142.1L735.2 1142.1 L735.2 1257.2L735.2 1372.2 L640.7 1372.2L546.3 1372.2 L545.6 1332.1ZM1.1 1108.6C1.1 1067.3 5.6 1033.1 17.0 986.7C21.3 969.5 34.5 928.7 39.4 917.7C40.1 916.0 42.6 910.3 44.8 904.9C79.3 822.7 137.2 752.3 203.0 712.4C218.1 703.3 216.4 703.3 218.4 712.4C219.3 716.8 221.9 725.9 224.1 732.6C231.7 755.7 231.1 743.0 231.8 910.7L232.4 1062.1 L230.2 1069.1C223.6 1090.5 204.7 1107.3 182.4 1111.4C178.8 1112.1 148.1 1112.9 105.3 1113.4C24.2 1114.5 32.6 1113.5 13.0 1124.6C7.0 1128.1 1.8 1130.9 1.5 1130.9C1.3 1130.9 1.0 1120.9 1.1 1108.6ZM444.8 1120.7C428.8 1119.5 412.9 1119.0 260.0 1114.9C241.4 1114.4 235.2 1113.9 235.2 1112.9C235.2 1112.2 239.1 1106.7 243.8 1100.6C253.7 1087.9 258.1 1080.3 259.7 1073.1C260.5 1069.6 261.1 1029.5 261.6 944.1C262.0 875.9 262.7 819.8 263.0 819.4C263.4 819.1 267.3 822.1 271.7 826.2C305.4 857.8 345.0 878.1 389.3 886.5C420.0 892.2 463.3 892.2 497.4 886.4C525.0 881.6 536.0 883.4 548.2 894.4C555.9 901.4 557.4 906.0 558.4 925.8C560.6 971.4 558.9 1047.3 555.0 1077.6C553.9 1086.1 553.3 1088.0 549.8 1093.2C541.8 1105.3 527.8 1114.2 510.2 1118.7C500.4 1121.1 465.1 1122.2 444.8 1120.7ZM618.5 1111.1C604.7 1107.0 592.2 1097.4 590.1 1089.1C589.6 1087.1 588.9 1059.4 588.5 1027.6C588.2 995.8 587.6 943.2 587.3 910.6C586.6 852.6 586.6 851.4 588.5 852.0C589.6 852.3 593.7 854.0 597.7 855.6C620.2 865.0 653.7 865.5 685.6 856.8C706.1 851.2 733.5 839.3 756.2 826.2C761.2 823.2 766.9 819.9 768.9 818.8C776.8 814.2 788.2 812.3 786.8 815.7C785.3 819.4 779.9 836.7 776.6 848.2C775.7 851.5 774.3 856.4 773.5 858.9C760.4 903.1 746.2 982.3 738.3 1055.2C735.6 1080.0 734.9 1084.6 733.1 1088.7C729.2 1097.7 714.9 1107.9 702.8 1110.5C694.6 1112.2 624.2 1112.7 618.5 1111.1ZM420.2 862.3C399.6 859.8 392.1 858.4 375.3 854.0C314.0 838.1 268.6 794.0 252.2 734.7C233.9 668.4 260.4 583.2 317.1 526.5C350.9 492.8 389.8 472.5 439.2 463.0C450.3 460.9 486.5 461.2 500.0 463.5C520.6 467.1 553.8 476.4 558.0 479.8C559.8 481.2 559.9 813.0 558.2 821.3C555.2 835.2 545.8 845.5 531.4 850.6C523.1 853.6 504.6 857.4 483.6 860.5C473.3 862.1 428.3 863.3 420.2 862.3ZM621.7 836.8C612.3 835.2 599.2 829.5 593.4 824.4L590.2 821.6 L589.1 654.4C588.5 562.5 588.3 486.9 588.8 486.5C589.2 486.1 593.7 486.2 598.7 486.9C614.6 488.9 677.1 488.6 692.7 486.4C754.1 477.9 795.0 458.5 831.8 420.4C880.6 370.0 905.4 305.1 900.9 239.8C900.3 231.3 899.2 213.6 898.3 200.4C897.4 187.2 896.5 174.1 896.2 171.3C895.9 168.5 895.2 157.9 894.7 147.8C894.1 137.6 893.1 123.1 892.5 115.5C889.2 76.2 904.8 26.4 925.9 9.0C938.5 -1.5 956.0 -3.0 966.8 5.6C968.5 7.0 968.8 8.4 968.7 14.1C968.6 20.3 967.8 22.7 960.2 39.9C946.6 70.7 942.6 88.1 944.8 108.4C947.0 129.1 957.5 150.7 973.8 167.7C979.2 173.3 980.8 177.3 986.7 200.0C998.0 243.5 1002.0 289.2 998.9 338.4C997.5 360.3 993.3 393.1 989.9 408.0C989.3 410.5 987.9 417.2 986.6 422.8C980.7 450.3 966.1 496.2 957.1 515.8C956.6 517.0 954.9 520.7 953.5 524.0C947.4 538.1 944.9 543.2 937.0 559.3C932.5 568.6 926.3 580.5 923.3 585.9C920.4 591.2 916.8 597.7 915.4 600.2C884.5 656.1 829.9 731.6 796.0 765.3C763.7 797.5 738.9 813.0 697.7 826.8C667.2 837.0 642.5 840.3 621.7 836.8ZM733.6 629.8C743.1 627.2 749.3 620.2 752.2 608.9C759.9 577.9 716.1 561.5 700.3 589.5C696.8 595.7 696.4 607.3 699.4 614.3C704.8 626.9 719.6 633.6 733.6 629.8Z"/></svg></span></div>
     <h2 class="d3">Join the ERAYAH circle</h2>
-    <p class="lede" style="margin-inline:auto;color:rgba(248,234,207,.7)">Early access to new collections, styling notes from our atelier, and the stories behind each piece.</p>
+    <p class="lede" style="margin-inline:auto">Early access to new collections, styling notes from our atelier, and the stories behind each piece.</p>
     <form onsubmit="event.preventDefault();this.reset();this.nextElementSibling.textContent='Thank you — check your inbox to confirm.'">
       <label class="sr" for="nl">Email address</label>
       <input id="nl" type="email" required placeholder="Your email address">
@@ -779,6 +783,7 @@ p{margin:0 0 1em}
   <div class="wrap">
     <div class="ftr-top">
       <div class="ftr-brand">
+        <span class="mark ftr-mark" aria-hidden="true"><svg viewBox="0 0 1000 1372"><use href="#ele"></use></svg></span>
         <span class="wordmark">ERAYAH</span>
         <p>Contemporary jadau-inspired jewellery, made in Mumbai. Heirlooms designed to be lived in rather than locked away.</p>
         <div class="socials" style="margin-top:22px">
