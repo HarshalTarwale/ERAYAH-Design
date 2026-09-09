@@ -504,6 +504,23 @@ p{margin:0 0 1em}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .rise,.veil{opacity:1;transform:none;clip-path:none}
 }
+
+/* ============ review watermark — BACKK BENCHERS (fixed marks; design still reviewable) ============ */
+.wm{position:fixed;inset:0;pointer-events:none;z-index:2147483000;overflow:hidden}
+.wm img{
+  position:absolute;width:min(56vw,680px);height:auto;opacity:.2;
+  transform:rotate(-18deg);transform-origin:center;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.2));
+  user-select:none;-webkit-user-drag:none;
+}
+.wm img:nth-child(1){top:14%;left:-8%}
+.wm img:nth-child(2){top:42%;right:-2%}
+@media(max-width:640px){
+  .wm img{width:78vw;opacity:.22}
+  .wm img:nth-child(1){top:12%;left:-12%}
+  .wm img:nth-child(2){top:58%;right:-10%}
+}
+@media print{.wm img{opacity:.3!important}}
 </style>
 </head>
 <body>
@@ -995,6 +1012,15 @@ p{margin:0 0 1em}
 </aside>
 <script>
 (function(){
+  /* Preview mode: keep everything on the home page for now.
+     Re-enable inner pages later by removing this block. */
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a');if(!a)return;
+    var href=a.getAttribute('href')||'';
+    if(/(?:^|\/)(collection|product)\.html/i.test(href)||href==='#'){e.preventDefault();}
+  },true);
+  document.addEventListener('submit',function(e){e.preventDefault();},true);
+
   var hdr=document.getElementById('hdr');
   addEventListener('scroll',function(){hdr.classList.toggle('small',scrollY>90)},{passive:true});
 
@@ -1072,5 +1098,6 @@ p{margin:0 0 1em}
   document.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){c.classList.toggle('on')})});
 })();
 </script>
+<div class="wm" aria-hidden="true"><img src="logo.png" alt=""><img src="logo.png" alt=""></div>
 </body>
 </html>
