@@ -142,11 +142,11 @@ p{margin:0 0 1em}
 .hdr.small .nav{opacity:0;max-height:0;overflow:hidden;pointer-events:none}
 .nav-in{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);display:flex;justify-content:center;gap:clamp(20px,3vw,42px)}
 .nav-in>li>a{
-  display:block;padding:13px 2px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--plum);position:relative;opacity:.74;transition:opacity .3s;
+  display:block;padding:14px 2px;font-size:11.5px;letter-spacing:.17em;text-transform:uppercase;font-weight:500;
+  color:var(--plum);position:relative;transition:color .3s;
 }
-.nav-in>li>a::after{content:"";position:absolute;left:0;right:100%;bottom:9px;height:1px;background:var(--gold);transition:right .4s cubic-bezier(.2,.7,.3,1)}
-.nav-in>li:hover>a{opacity:1}
+.nav-in>li>a::after{content:"";position:absolute;left:0;right:100%;bottom:9px;height:1.5px;background:var(--gold);transition:right .4s cubic-bezier(.2,.7,.3,1)}
+.nav-in>li:hover>a{color:var(--gold)}
 .nav-in>li:hover>a::after{right:0}
 
 .mega{
@@ -158,11 +158,11 @@ p{margin:0 0 1em}
 }
 .has-mega:hover .mega,.mega:hover{opacity:1;visibility:visible;transform:none}
 .mega-in{max-width:var(--maxw);margin:0 auto;padding:44px var(--gut) 50px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) 300px;gap:48px}
-.mega h4{font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-family:var(--ui);font-weight:500;color:var(--gold);margin-bottom:18px}
-.mega li a{display:block;padding:6px 0;font-size:14px;font-weight:400;color:var(--plum);opacity:.78;transition:opacity .25s,padding-left .25s}
-.mega li a:hover{opacity:1;padding-left:7px}
+.mega h4{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-family:var(--ui);font-weight:600;color:#8A5A2B;margin-bottom:16px}
+.mega li a{display:block;padding:7px 0;font-size:14.5px;font-weight:400;color:var(--ink);transition:color .25s,padding-left .25s}
+.mega li a:hover{color:var(--gold);padding-left:7px}
 .mega-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.mega-card p{margin:14px 0 0;font-size:13px;color:var(--muted)}
+.mega-card p{margin:14px 0 0;font-size:13px;color:var(--plum);opacity:.72}
 
 .burger{display:none}
 
@@ -357,15 +357,30 @@ p{margin:0 0 1em}
   transform:translateX(100%);transition:transform .45s cubic-bezier(.2,.7,.3,1);display:flex;flex-direction:column;
 }
 .drawer.on{transform:none}
-.drawer.left{left:0;right:auto;transform:translateX(-100%);background:var(--plum);color:var(--ivory)}
+.drawer.left{left:0;right:auto;transform:translateX(-100%);background:linear-gradient(180deg,var(--plum) 0%,var(--plum-900) 100%);color:var(--ivory)}
 .drawer.left.on{transform:none}
-.drawer-hd{display:flex;align-items:center;justify-content:space-between;padding:24px var(--gut);border-bottom:1px solid var(--line)}
+.drawer-hd{display:flex;align-items:center;justify-content:space-between;padding:22px var(--gut);border-bottom:1px solid var(--line)}
 .drawer.left .drawer-hd{border-bottom-color:rgba(248,234,207,.16)}
 .drawer-hd h3{font-size:20px;font-weight:400}
-.drawer-bd{flex:1;overflow:auto;padding:24px var(--gut)}
+.drawer-brand{display:flex;align-items:center;gap:11px}
+.drawer-brand .mark{font-size:26px;color:var(--gold-soft)}
+.drawer-brand .wordmark{font-size:20px}
+.drawer-bd{flex:1;overflow:auto;padding:16px var(--gut) 24px}
 .drawer-ft{padding:22px var(--gut);border-top:1px solid var(--line)}
-.close{font-size:22px;line-height:1;padding:4px 6px}
-.mnav li a{display:block;padding:15px 0;font-family:var(--display);font-size:26px;font-weight:300;border-bottom:1px solid rgba(248,234,207,.13)}
+.drawer.left .drawer-ft{border-top-color:rgba(248,234,207,.16)}
+.drawer.left .btn-line{color:var(--ivory);border-color:rgba(248,234,207,.42)}
+.drawer.left .btn-line:hover{background:var(--ivory);color:var(--plum);border-color:var(--ivory)}
+.close{font-size:24px;line-height:1;padding:4px 6px;color:currentColor;opacity:.8;transition:opacity .25s}
+.close:hover{opacity:1}
+.mnav li a{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:16px 0;font-family:var(--display);font-size:23px;font-weight:300;letter-spacing:.01em;
+  border-bottom:1px solid rgba(248,234,207,.13);transition:color .25s,padding-left .25s;
+}
+.mnav li a::after{content:"\2192";font-family:var(--ui);font-size:13px;color:var(--gold-soft);opacity:0;transform:translateX(-8px);transition:opacity .25s,transform .25s}
+.mnav li a:hover,.mnav li a:focus-visible{color:var(--gold-soft);padding-left:6px}
+.mnav li a:hover::after,.mnav li a:focus-visible::after{opacity:1;transform:none}
+.mnav li:last-child a{border-bottom:0}
 .cart-line{display:grid;grid-template-columns:78px 1fr auto;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
 .cart-line img{aspect-ratio:4/5;object-fit:cover}
 .cart-line h4{font-size:17px;font-weight:400;margin-bottom:4px}
@@ -486,7 +501,10 @@ p{margin:0 0 1em}
 }
 @media(max-width:640px){
   .grid,.grid.g3{grid-template-columns:repeat(2,1fr)}
-  .cats{grid-template-columns:repeat(2,1fr)}
+  .cats{grid-template-columns:repeat(2,1fr);gap:20px 14px}
+  .cats .cat .arch{aspect-ratio:3/3.6}
+  .cat h3{font-size:17px;margin-top:13px}
+  .cat small{color:var(--gold);font-size:9px;letter-spacing:.14em;margin-top:4px}
   .gal{grid-template-columns:1fr}
   .thumbs{flex-direction:row;order:2;overflow:auto}
   .thumb{width:70px;flex:none}
@@ -1041,7 +1059,7 @@ p{margin:0 0 1em}
 <div class="scrim" data-close></div>
 
 <aside class="drawer left" id="mnav" aria-label="Menu" aria-hidden="true">
-  <div class="drawer-hd"><h3 class="wordmark" style="font-size:20px">ERAYAH</h3><button class="close" data-close aria-label="Close">&times;</button></div>
+  <div class="drawer-hd"><span class="drawer-brand"><span class="mark" aria-hidden="true"><svg viewBox="0 0 1000 1372"><use href="#ele"></use></svg></span><span class="wordmark">ERAYAH</span></span><button class="close" data-close aria-label="Close">&times;</button></div>
   <div class="drawer-bd">
     <ul class="mnav">
       <li><a href="collection.html">Earrings</a></li>
